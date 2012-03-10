@@ -1,5 +1,5 @@
 { "name": "twitter"
-, "version": "v0.1.18"
+, "version": "v0.2.0"
 , "description": "Twitter API client library for node.js"
 , "keywords": ["twitter","streaming","oauth"]
 , "homepage": "https://github.com/jdub/node-twitter"
@@ -13,8 +13,8 @@
   , "url": "http://github.com/jdub/node-twitter.git"
   }
 , "dependencies":
-  { "oauth": ">=0.8.4"
+  { "request": "2.9.153"
   }
-, "engines": ["node >=0.2.0"]
+, "engines": ["node >=0.6"]
 , "main": "./lib/twitter"
 }
