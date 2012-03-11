@@ -30,7 +30,7 @@ It's early days for node-twitter, so I'm going to assume a fair amount of knowle
 
 The convenience APIs aren't finished, but you can get started with the basics:
 
-	twit.get('/statuses/show/27593302936.json', {include_entities:true}, function(data) {
+	twit.get('/statuses/show/27593302936.json', {include_entities:true}, function(error, data) {
 		console.log(util.inspect(data));
 	});
 
@@ -39,18 +39,18 @@ The convenience APIs aren't finished, but you can get started with the basics:
 Note that all functions may be chained:
 
 	twit
-		.verifyCredentials(function(data) {
+		.verifyCredentials(function(error, data) {
 			console.log(util.inspect(data));
 		})
 		.updateStatus('Test tweet from node-twitter/' + twitter.VERSION,
-			function(data) {
+			function(error. data) {
 				console.log(util.inspect(data));
 			}
 		);
 
 ### Search API (unstable, may change)
 
-	twit.search('nodejs OR #node', function(data) {
+	twit.search('nodejs OR #node', function(error, data) {
 		console.log(util.inspect(data));
 	});
 
@@ -58,7 +58,7 @@ Note that all functions may be chained:
 
 The stream() callback receives a Stream-like EventEmitter:
 
-	twit.stream('statuses/sample', function(stream) {
+	twit.stream('statuses/sample', function(error, stream) {
 		stream.on('data', function(data) {
 			console.log(util.inspect(data));
 		});
@@ -66,7 +66,7 @@ The stream() callback receives a Stream-like EventEmitter:
 
 node-twitter also supports user and site streams:
 
-	twit.stream('user', {track:'nodejs'}, function(stream) {
+	twit.stream('user', {track:'nodejs,#node'}, function(error, stream) {
 		stream.on('data', function(data) {
 			console.log(util.inspect(data));
 		});
