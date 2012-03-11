@@ -8,8 +8,7 @@ Twitter API client library for node.js
 You can install node-twitter and its dependencies with npm: `npm install twitter`.
 
 - [node](http://nodejs.org/) v0.6+
-- [node-oauth](https://github.com/ciaranj/node-oauth)
-- [cookies](https://github.com/jed/cookies)
+- [request](https://github.com/mikeal/request) v2.9
 
 ## Getting started
 
@@ -22,8 +21,8 @@ It's early days for node-twitter, so I'm going to assume a fair amount of knowle
 	var twit = new twitter({
 		consumer_key: 'STATE YOUR NAME',
 		consumer_secret: 'STATE YOUR NAME',
-		access_token_key: 'STATE YOUR NAME',
-		access_token_secret: 'STATE YOUR NAME'
+		token: 'STATE YOUR NAME',
+		token_secret: 'STATE YOUR NAME'
 	});
 
 ### Basic OAuth-enticated GET/POST API (stable)
